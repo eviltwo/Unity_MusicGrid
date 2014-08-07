@@ -5,11 +5,12 @@ public class FieldLineCreator : MonoBehaviour {
 
 	public GameObject LinePrefab;
 	public int LineValue = 8;
-	public Vector2 FieldScale = new Vector2 (7,7);
 	public float LineY = 0.1f;
 
-	// Use this for initialization
+	FieldStatus fStatus;
+
 	void Start () {
+		fStatus = GetComponent<FieldStatus> ();
 		setLine ();
 	}
 	
@@ -21,6 +22,9 @@ public class FieldLineCreator : MonoBehaviour {
 
 	// 線を設置
 	void setLine(){
+		Vector2 FieldScale = fStatus.FieldScale;
+		GameObject LineBase = new GameObject ();
+		LineBase.name = "LineBase";
 		for (int iy = 0; iy <= LineValue; iy++) {
 			Vector3 pos = new Vector3 ();
 			pos.x = 0;
@@ -34,6 +38,7 @@ public class FieldLineCreator : MonoBehaviour {
 			GameObject line = (GameObject)Instantiate (LinePrefab);
 			line.transform.position = pos;
 			line.transform.localScale = scl;
+			line.transform.parent = LineBase.transform;
 		}
 
 		for (int ix = 0; ix <= LineValue; ix++) {
@@ -50,6 +55,7 @@ public class FieldLineCreator : MonoBehaviour {
 			line.transform.position = pos;
 			line.transform.localScale = scl;
 			line.transform.Rotate(0,-90,0);
+			line.transform.parent = LineBase.transform;
 		}
 	}
 }
