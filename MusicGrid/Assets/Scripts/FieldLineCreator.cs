@@ -5,7 +5,7 @@ public class FieldLineCreator : MonoBehaviour {
 
 	public GameObject LinePrefab;
 	public int LineValue = 8;
-	public float LineY = 0.1f;
+	public float LineZ = 0.1f;
 
 	FieldStatus fStatus;
 
@@ -25,11 +25,11 @@ public class FieldLineCreator : MonoBehaviour {
 		Vector2 FieldScale = fStatus.FieldScale;
 		GameObject LineBase = new GameObject ();
 		LineBase.name = "LineBase";
-		for (int iy = 0; iy <= LineValue; iy++) {
+		for (int iy = 0; iy < LineValue; iy++) {
 			Vector3 pos = new Vector3 ();
 			pos.x = 0;
-			pos.y = LineY;
-			pos.z = (FieldScale.y / (float)(LineValue - 1)) * iy;
+			pos.y = (FieldScale.y / (float)(LineValue - 1)) * iy;
+			pos.z = LineZ;
 			Vector3 scl = new Vector3 ();
 			scl.x = FieldScale.x;
 			scl.y = 1;
@@ -41,11 +41,11 @@ public class FieldLineCreator : MonoBehaviour {
 			line.transform.parent = LineBase.transform;
 		}
 
-		for (int ix = 0; ix <= LineValue; ix++) {
+		for (int ix = 0; ix < LineValue; ix++) {
 			Vector3 pos = new Vector3 ();
 			pos.x = (FieldScale.y / (float)(LineValue - 1)) * ix;
-			pos.y = LineY;
-			pos.z = 0;
+			pos.y = 0;
+			pos.z = LineZ;
 			Vector3 scl = new Vector3 ();
 			scl.x = FieldScale.x;
 			scl.y = 1;
@@ -54,7 +54,7 @@ public class FieldLineCreator : MonoBehaviour {
 			GameObject line = (GameObject)Instantiate (LinePrefab);
 			line.transform.position = pos;
 			line.transform.localScale = scl;
-			line.transform.Rotate(0,-90,0);
+			line.transform.Rotate(0,0,90);
 			line.transform.parent = LineBase.transform;
 		}
 	}

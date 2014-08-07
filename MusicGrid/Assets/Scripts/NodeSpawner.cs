@@ -5,7 +5,7 @@ public class NodeSpawner : MonoBehaviour {
 
 	public GameObject NodePrefab;
 	public GameObject EffectPrefab;
-	public float NodeY = 0.05f;
+	public float NodeZ = 0.05f;
 
 	GameObject NodeBase;
 	int stime = -1;
@@ -30,8 +30,8 @@ public class NodeSpawner : MonoBehaviour {
 		SpawnData data = fStatus.getSpawnData ();
 		Vector3 pos = Vector3.zero;
 		pos.x = data.Position.x;
-		pos.y = NodeY;
-		pos.z = data.Position.y;
+		pos.y = data.Position.y;
+		pos.z = NodeZ;
 		GameObject node = (GameObject)Instantiate (NodePrefab);
 		node.transform.position = pos;
 		node.transform.parent = NodeBase.transform;

@@ -24,11 +24,15 @@ public class CameraController : MonoBehaviour {
 		Vector2 center = fStatus.FieldScale / 2;
 		Vector2 pp = Vector2.zero;
 		pp.x = Player.transform.position.x;
-		pp.y = Player.transform.position.z;
+		pp.y = Player.transform.position.y;
 		Vector3 pos = transform.position;
 		pos.x = center.x+(pp.x-center.x)*MoveMultiple;
-		pos.z = center.y+(pp.y-center.y)*MoveMultiple;
+		pos.y = center.y+(pp.y-center.y)*MoveMultiple;
 		transform.position = pos;
 
+		Vector3 rot = Vector3.zero;
+		rot.x = (pp.y - center.y) * RotMultiple;
+		rot.y = -(pp.x - center.x) * RotMultiple;
+		transform.localEulerAngles = rot;
 	}
 }

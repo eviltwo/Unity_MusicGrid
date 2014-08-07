@@ -31,11 +31,11 @@ public class PlayerController : MonoBehaviour {
 
 		Vector3 AddSpeed = Vector3.zero;
 		AddSpeed.x += Speed.x * Time.deltaTime;
-		AddSpeed.z += Speed.y * Time.deltaTime;
+		AddSpeed.y += Speed.y * Time.deltaTime;
 		transform.position += AddSpeed;
 	}
 
 	void OnTriggerEnter(Collider c){
-		transform.position = new Vector3 (3.5f,transform.position.y,3.5f);
+		transform.position = new Vector3 (3.5f,3.5f,transform.position.z);
 	}
 }

@@ -30,8 +30,8 @@ public class NodeController : MonoBehaviour {
 		pos.y = SPos.y + (GPos.y - SPos.y) * mlt;
 		Vector3 npos = Vector3.zero;
 		npos.x = pos.x;
-		npos.y = transform.position.y;
-		npos.z = pos.y;
+		npos.y = pos.y;
+		npos.z = transform.position.z;
 		transform.localPosition = npos;
 	}
 

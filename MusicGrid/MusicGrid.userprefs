@@ -1,14 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Temp/Compiled-CustomTransparent-Mac.shader">
     <Files>
-      <File FileName="Assets/Scripts/FieldLineCreator.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FieldLineCreator.cs" Line="24" Column="24" />
       <File FileName="Assets/Scripts/FieldStatus.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/NodeSpawner.cs" Line="42" Column="42" />
-      <File FileName="Assets/Scripts/NodeController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerController.cs" Line="2" Column="2" />
+      <File FileName="Assets/Scripts/NodeSpawner.cs" Line="17" Column="17" />
+      <File FileName="Assets/Scripts/NodeController.cs" Line="33" Column="33" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="67" Column="67" />
       <File FileName="Assets/Scripts/MusicController.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CameraController.cs" Line="23" Column="23" />
+      <File FileName="Assets/Scripts/CameraController.cs" Line="37" Column="37" />
+      <File FileName="Temp/Compiled-Transparent-Mac.shader" Line="16" Column="16" />
+      <File FileName="Temp/Compiled-CustomTransparent-Mac.shader" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
