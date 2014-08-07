@@ -4,19 +4,24 @@ using System.Collections;
 public class NodeSpawner : MonoBehaviour {
 
 	public GameObject NodePrefab;
+	public GameObject EffectPrefab;
 	public float NodeY = 0.05f;
 
-	int stime = 0;
-	int stimemax = 15;
+	GameObject NodeBase;
+	int stime = -1;
 	FieldStatus fStatus;
+	MusicController mController;
 	void Start () {
 		fStatus = GetComponent<FieldStatus> ();
+		mController = GameObject.Find ("MusicPlayer").gameObject.GetComponent<MusicController> ();
+
+		NodeBase = new GameObject ();
 	}
 
 	void Update () {
-		stime++;
-		if (stime >= stimemax) {
-			stime = 0;
+		int t = Mathf.FloorToInt(mController.getTmpTime ());
+		if (t > stime) {
+			stime = t;
 			spawnNode ();
 		}
 	}
@@ -29,6 +34,12 @@ public class NodeSpawner : MonoBehaviour {
 		pos.z = data.Position.y;
 		GameObject node = (GameObject)Instantiate (NodePrefab);
 		node.transform.position = pos;
-		node.GetComponent<NodeController> ().setVector (data.FwdVec);
+		node.transform.parent = NodeBase.transform;
+		NodeController nc = node.GetComponent<NodeController> ();
+		nc.setNodeStatus ((float)stime, (float)stime + 4, data.Position, data.Position + data.FwdVec * fStatus.FieldScale.x);
+		
+		GameObject effect = (GameObject)Instantiate (EffectPrefab);
+		effect.transform.position = pos;
+		effect.transform.parent = NodeBase.transform;
 	}
 }

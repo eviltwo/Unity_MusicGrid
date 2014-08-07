@@ -15,8 +15,7 @@ public class MusicController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		float t = getSecTime ();
-		Debug.Log (t);
+
 	}
 
 	// 曲をセット
