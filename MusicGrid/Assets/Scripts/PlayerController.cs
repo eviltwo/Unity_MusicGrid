@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour {
 
 	Vector2 Speed = Vector2.zero;
 	FieldStatus fStatus;
+	Joystick jStick;
 	void Start () {
 		fStatus = GameObject.Find ("System").gameObject.GetComponent<FieldStatus> ();
+		jStick = GameObject.Find ("Joystick").gameObject.GetComponent<Joystick> ();
 	}
 	
 	// Update is called once per frame
@@ -27,8 +29,13 @@ public class PlayerController : MonoBehaviour {
 				Speed [i] = Mathf.Min (0, Speed [i] + LessSpeed * Time.deltaTime);
 			}
 		}
-		Speed.x = Input.GetAxis ("Horizontal") * MaxSpeed;
-		Speed.y = Input.GetAxis ("Vertical") * MaxSpeed;
+		if (Application.platform == RuntimePlatform.Android) {
+			Speed.x = jStick.position.x * MaxSpeed;
+			Speed.y = jStick.position.y * MaxSpeed;
+		} else {
+			Speed.x = Input.GetAxis ("Horizontal") * MaxSpeed;
+			Speed.y = Input.GetAxis ("Vertical") * MaxSpeed;
+		}
 
 		Vector3 AddSpeed = Vector3.zero;
 		AddSpeed.x += Speed.x * Time.deltaTime;
