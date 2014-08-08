@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
-
+	 
 	public float MaxSpeed = 5.0f;
 	public float LessSpeed = 1f;
+	public GameObject DamageEffectPrefab;
 
 	Vector2 Speed = Vector2.zero;
 
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider c){
+		GameObject effect = (GameObject)Instantiate(DamageEffectPrefab);
+		effect.transform.localPosition = transform.localPosition;
 		transform.position = new Vector3 (3.5f,3.5f,transform.position.z);
 	}
 }
