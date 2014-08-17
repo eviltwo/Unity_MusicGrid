@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{5A57DE50-349A-4CE3-0F9A-4D9B779010F0}") = "MusicGrid", "Assembly-CSharp.csproj", "{3D812EC5-18C8-383F-AC80-4417A7302C77}"
 EndProject
+Project("{5A57DE50-349A-4CE3-0F9A-4D9B779010F0}") = "MusicGrid", "Assembly-CSharp-Editor.csproj", "{517212B4-49F1-F336-E05C-D462C22B8D82}"
+EndProject
 Project("{5A57DE50-349A-4CE3-0F9A-4D9B779010F0}") = "MusicGrid", "Assembly-UnityScript.unityproj", "{43C29988-6080-BE08-86A7-A771CA78E72C}"
 EndProject
 Global
@@ -15,6 +17,10 @@ Global
 		{3D812EC5-18C8-383F-AC80-4417A7302C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D812EC5-18C8-383F-AC80-4417A7302C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D812EC5-18C8-383F-AC80-4417A7302C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{517212B4-49F1-F336-E05C-D462C22B8D82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{517212B4-49F1-F336-E05C-D462C22B8D82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{517212B4-49F1-F336-E05C-D462C22B8D82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{517212B4-49F1-F336-E05C-D462C22B8D82}.Release|Any CPU.Build.0 = Release|Any CPU
 		{43C29988-6080-BE08-86A7-A771CA78E72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{43C29988-6080-BE08-86A7-A771CA78E72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C29988-6080-BE08-86A7-A771CA78E72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																					GlobalSection(MonoDevelopProperties) = preSolution
+																																	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

@@ -24,8 +24,8 @@ public class MusicController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		nowtime = audio.time;
-		if (nowtime == oldtime) {
-			nowtime += Time.deltaTime;
+		if (nowtime <= oldtime) {
+			nowtime = oldtime + Time.deltaTime;
 		}
 		oldtime = nowtime;
 	}
